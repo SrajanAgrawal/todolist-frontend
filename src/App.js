@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+// https://dribbble.com/shots/14440819-KosmoTime-Task-Manager/attachments/6121947?mode=media
+
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,300&family=Poppins:wght@300&display=swap');
+
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import Home from './pages';
+import SignUp from './pages/register';
+import Login from './pages/login';
+// import NavbarComponent from "./components/NavbarComponent/NavbarComponent";
+import Dashboard from "./pages/dashboard";
+import AddTask from "./pages/addTask";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route
+          path="/register"
+          element={<SignUp />}
+        />
+        <Route
+          path="/login"
+          element={<Login />}
+        />
+        <Route
+          path="/dashboard"
+          element={<Dashboard />}
+        />
+        <Route
+          path="/addTask"
+          element={<AddTask />}
+        />
+      </Routes>
+    </Router>
   );
 }
 
