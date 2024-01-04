@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Home from './pages';
+import Home from './pages/home';
 import SignUp from './pages/register';
 import Login from './pages/login';
 // import NavbarComponent from "./components/NavbarComponent/NavbarComponent";
